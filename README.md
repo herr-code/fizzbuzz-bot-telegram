@@ -39,7 +39,7 @@ npm install node-telegram-bot-api --save
 
 ![3](https://user-images.githubusercontent.com/61515833/169617296-20353a84-9581-400f-bda2-39bfa62ee4de.png)
 
-4. El siguiente grafico representa la estructura de la solucíón (sólo se agrega `bot.js`):
+3. El siguiente grafico representa la estructura de la solucíón (sólo se agrega `bot.js`):
 
 ```mermaid
 graph TD;
@@ -50,14 +50,28 @@ graph TD;
     ExplorerController-->Server
     ExplorerController-->Bot
 ```
+4. Para manejar el `TOKEN` del Bot se hace uso de [dotenv](https://www.dotenv.org/) que es un estándar para manejar variables de entorno. Para ello instalamos el paquete:  
+
+```
+npm install dotenv --save
+```
+y creamos el archivo `.env` el cual contendrá la llave (es información sensible por lo que no se versiona).
 
 ## :shipit: Resultados
 
+1. Enviando un número:
+
+![Animation3](https://user-images.githubusercontent.com/61515833/169675749-e976912b-cdb1-4b6b-a3a2-c7ac4d5462db.gif)
+
+2. Enviando `node` ó `java`:
+
+![Animation4](https://user-images.githubusercontent.com/61515833/169675813-7a8a257f-2098-4c12-a644-c1f05290e441.gif)
 
 ## :open_file_folder: Estructura de carpetas
 
 ```
 fizzbuzz
+│   .env
 │   .eslintrc.js
 │   .gitignore
 │   explorers.json
@@ -80,8 +94,8 @@ fizzbuzz
 │   └───utils
 │   │   │   Reader.js
 │   │
+│   |   bot.js
 │   |   server.js
-│   
 └───test
 │   └───controllerss
 │   │   │  ExplorerController.test.js
@@ -106,3 +120,5 @@ fizzbuzz
 - Express ^4.18.1
 - Jest ^28.0.3
 - Eslint ^28.0.3
+- Dotenv ^16.0.1
+- Node-telegram-bot-api ^0.57.0
